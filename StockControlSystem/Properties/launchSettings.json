@@ -1,6 +1,6 @@
 {
   "profiles": {
-    "Stock_control_system": {
+    "StockControlSystem": {
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "swagger",

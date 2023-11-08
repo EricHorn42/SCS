@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33424.131
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stock control system", "Stock control system\Stock control system.csproj", "{96F9C81C-05A2-42A6-A668-B185A4A2AE09}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StockControlSystem", "StockControlSystem\StockControlSystem.csproj", "{96F9C81C-05A2-42A6-A668-B185A4A2AE09}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{269E1BE4-705D-4114-9B2C-5F0AD5B35BCB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StockControlSystem.Test", "StockControlSystem.Test\StockControlSystem.Test.csproj", "{FF742F6F-29BC-4827-A231-94D7B04EE798}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +19,16 @@ Global
 		{96F9C81C-05A2-42A6-A668-B185A4A2AE09}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{96F9C81C-05A2-42A6-A668-B185A4A2AE09}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{96F9C81C-05A2-42A6-A668-B185A4A2AE09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF742F6F-29BC-4827-A231-94D7B04EE798}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF742F6F-29BC-4827-A231-94D7B04EE798}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF742F6F-29BC-4827-A231-94D7B04EE798}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF742F6F-29BC-4827-A231-94D7B04EE798}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FF742F6F-29BC-4827-A231-94D7B04EE798} = {269E1BE4-705D-4114-9B2C-5F0AD5B35BCB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D1699CB6-3417-4D20-B012-36BC39968324}
