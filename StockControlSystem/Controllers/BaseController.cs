@@ -13,14 +13,12 @@ namespace StockControlSystem.Controllers
             _repository = repository;
         }
 
-        // GET: api/[controller]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<T>>> Get()
         {
             return await _repository.GetAll();
         }
 
-        // GET: api/[controller]/5
         [HttpGet("{id}")]
         public async Task<ActionResult<T>> Get(int id)
         {
@@ -32,7 +30,6 @@ namespace StockControlSystem.Controllers
             return entity;
         }
 
-        // PUT: api/[controller]/5
         [HttpPut("{id}")]
         public async Task<IActionResult> Put(int id, T entity)
         {
@@ -44,7 +41,6 @@ namespace StockControlSystem.Controllers
             return NoContent();
         }
 
-        // POST: api/[controller]
         [HttpPost]
         public async Task<ActionResult<T>> Post(T entity)
         {
@@ -52,7 +48,6 @@ namespace StockControlSystem.Controllers
             return CreatedAtAction("Get", new { id = entity.Id }, entity);
         }
 
-        // DELETE: api/[controller]/5
         [HttpDelete("{id}")]
         public async Task<ActionResult<T>> Delete(int id)
         {

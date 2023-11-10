@@ -24,7 +24,7 @@ namespace StockControlSystem.Migrations
 
             modelBuilder.Entity("StockControlSystem.Models.Address", b =>
                 {
-                    b.Property<int>("AddressId")
+                    b.Property<int>("Id")
                         .HasColumnType("int");
 
                     b.Property<string>("City")
@@ -56,18 +56,18 @@ namespace StockControlSystem.Migrations
                     b.Property<int?>("SupplierID")
                         .HasColumnType("int");
 
-                    b.HasKey("AddressId");
+                    b.HasKey("Id");
 
                     b.ToTable("Addresses");
                 });
 
             modelBuilder.Entity("StockControlSystem.Models.Brand", b =>
                 {
-                    b.Property<int>("BrandId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("BrandId"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
@@ -76,18 +76,18 @@ namespace StockControlSystem.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("BrandId");
+                    b.HasKey("Id");
 
                     b.ToTable("Brands");
                 });
 
             modelBuilder.Entity("StockControlSystem.Models.Category", b =>
                 {
-                    b.Property<int>("CategoryId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CategoryId"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
@@ -96,18 +96,15 @@ namespace StockControlSystem.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("CategoryId");
+                    b.HasKey("Id");
 
                     b.ToTable("Categories");
                 });
 
             modelBuilder.Entity("StockControlSystem.Models.Item", b =>
                 {
-                    b.Property<int>("ItemId")
-                        .ValueGeneratedOnAdd()
+                    b.Property<int>("Id")
                         .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ItemId"));
 
                     b.Property<int?>("BrandId")
                         .HasColumnType("int");
@@ -123,7 +120,8 @@ namespace StockControlSystem.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("Price")
-                        .HasColumnType("decimal(18,2)");
+                        .HasPrecision(2)
+                        .HasColumnType("decimal(10,2)");
 
                     b.Property<int?>("SupplierId")
                         .HasColumnType("int");
@@ -131,24 +129,18 @@ namespace StockControlSystem.Migrations
                     b.Property<double?>("Weight")
                         .HasColumnType("float");
 
-                    b.HasKey("ItemId");
-
-                    b.HasIndex("BrandId");
-
-                    b.HasIndex("CategoryId");
-
-                    b.HasIndex("SupplierId");
+                    b.HasKey("Id");
 
                     b.ToTable("Itens");
                 });
 
             modelBuilder.Entity("StockControlSystem.Models.Supplier", b =>
                 {
-                    b.Property<int>("SupplierId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("SupplierId"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("CNPJ")
                         .IsRequired()
@@ -161,7 +153,7 @@ namespace StockControlSystem.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("SupplierId");
+                    b.HasKey("Id");
 
                     b.ToTable("Suppliers");
                 });
@@ -170,7 +162,7 @@ namespace StockControlSystem.Migrations
                 {
                     b.HasOne("StockControlSystem.Models.Supplier", "Supplier")
                         .WithMany("Addresses")
-                        .HasForeignKey("AddressId")
+                        .HasForeignKey("Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -181,15 +173,21 @@ namespace StockControlSystem.Migrations
                 {
                     b.HasOne("StockControlSystem.Models.Brand", "Brand")
                         .WithMany("Itens")
-                        .HasForeignKey("BrandId");
+                        .HasForeignKey("Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("StockControlSystem.Models.Category", "Category")
                         .WithMany("Itens")
-                        .HasForeignKey("CategoryId");
+                        .HasForeignKey("Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("StockControlSystem.Models.Supplier", "Supplier")
                         .WithMany("Itens")
-                        .HasForeignKey("SupplierId");
+                        .HasForeignKey("Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Brand");
 

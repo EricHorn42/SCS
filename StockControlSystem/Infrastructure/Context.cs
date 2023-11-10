@@ -25,6 +25,8 @@ namespace StockControlSystem.Infrastructure
                 .WithMany(category => category.Itens)
                 .HasForeignKey(item => item.Id);
 
+            builder.Entity<Item>().Property(p => p.Price).HasColumnType("decimal(10,2)").HasPrecision(2);
+
             builder.Entity<Supplier>()
                 .HasMany(supplier => supplier.Addresses)
                 .WithOne(address => address.Supplier)

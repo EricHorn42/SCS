@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
 
 namespace StockControlSystem.Models
 {
@@ -10,6 +11,7 @@ namespace StockControlSystem.Models
         public string Name { get; set; }
         [Required]
         [DataType(DataType.Currency)]
+        [Precision(2)]
         public decimal Price { get; set; }
         public string? Description { get; set; }
         public double? Weight { get; set; }
