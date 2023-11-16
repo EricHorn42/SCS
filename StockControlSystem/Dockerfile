@@ -10,16 +10,16 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY ["Stock control system/Stock control system.csproj", "Stock control system/"]
-RUN dotnet restore "Stock control system/Stock control system.csproj"
+COPY ["StockControlSystem/StockControlSystem.csproj", "StockControlSystem/"]
+RUN dotnet restore "StockControlSystem/StockControlSystem.csproj"
 COPY . .
-WORKDIR "/src/Stock control system"
-RUN dotnet build "Stock control system.csproj" -c Release -o /app/build
+WORKDIR "/src/StockControlSystem"
+RUN dotnet build "StockControlSystem.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "Stock control system.csproj" -c Release -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "StockControlSystem.csproj" -c Release -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "Stock control system.dll"]
+ENTRYPOINT ["dotnet", "StockControlSystem.dll"]

@@ -31,7 +31,7 @@ namespace StockControlSystem.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> Put(int id, T entity)
+        public async Task<IActionResult> Put(int id, [FromBody] T entity)
         {
             if (id != entity.Id)
             {
@@ -42,7 +42,7 @@ namespace StockControlSystem.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<T>> Post(T entity)
+        public async Task<ActionResult<T>> Post([FromBody] T entity)
         {
             await _repository.Add(entity);
             return CreatedAtAction("Get", new { id = entity.Id }, entity);

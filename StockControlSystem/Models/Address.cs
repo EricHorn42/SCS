@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
 
 namespace StockControlSystem.Models
@@ -24,16 +25,8 @@ namespace StockControlSystem.Models
         public string PostalCode { get; set; }
         public int? SupplierID { get; set; }
         [JsonIgnore]
+        [ForeignKey("SupplierId")]
         public virtual Supplier? Supplier { get; set; }
 
-        public Address(string street, string city, string state, string country, string postalCode, int number)
-        { 
-            Street = street;
-            City = city;
-            State = state;
-            Country = country;
-            PostalCode = postalCode;
-            Number = number;
-        }
     }
 }

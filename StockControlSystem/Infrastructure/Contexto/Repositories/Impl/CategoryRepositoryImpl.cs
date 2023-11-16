@@ -2,7 +2,7 @@
 
 namespace StockControlSystem.Infrastructure.Contexto.Repositories.Impl
 {
-    public class CategoryRepositoryImpl : BaseRepositoryImpl<Category, Context>
+    public class CategoryRepositoryImpl : BaseRepository<Category, Context>
     {
         public CategoryRepositoryImpl(Context context) : base(context)
         {

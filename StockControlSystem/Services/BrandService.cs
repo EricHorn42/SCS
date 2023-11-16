@@ -1,8 +1,9 @@
-﻿using System.Collections;
+﻿using Stock_control_system.Services;
+using System.Collections;
 
-namespace Stock_control_system.Services
+namespace StockControlSystem.Services
 {
-    public class ItemService : IBaseService
+    public class BrandService : IBaseService
     {
         ServiceDescriptor IList<ServiceDescriptor>.this[int index] { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 

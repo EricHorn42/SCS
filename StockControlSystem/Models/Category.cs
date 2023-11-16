@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace StockControlSystem.Models
 {
@@ -9,11 +10,8 @@ namespace StockControlSystem.Models
         [Required]
         public string Name { get; set; }
         public string? Description { get; set; }
-        public ICollection<Item> Itens { get; set; }    
+        [JsonIgnore]
+        public ICollection<Item>? Itens { get; set; }    
 
-        public Category(string Name) 
-        {
-            Name = Name;
-        }
     }
 }

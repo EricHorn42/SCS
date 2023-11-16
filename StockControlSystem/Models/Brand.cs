@@ -11,11 +11,8 @@ namespace StockControlSystem.Models
         public string Name { get; set; }
         public string? Description { get; set; }
         [JsonIgnore]
-        public virtual ICollection<Item> Itens { get; set; }
+        public virtual ICollection<Item>? Itens { get; set; }
 
-        public Brand(string name)
-        {
-            Name = name;
-        }
+
     }
 }

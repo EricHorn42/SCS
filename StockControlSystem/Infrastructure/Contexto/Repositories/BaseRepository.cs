@@ -1,19 +1,19 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using StockControlSystem.Models;
 
-namespace StockControlSystem.Infrastructure.Contexto.Repositories.Impl
+namespace StockControlSystem.Infrastructure.Contexto.Repositories
 {
-    public abstract class BaseRepositoryImpl<T, TContext> : IBaseRepository<T> where T : class, IEntity where TContext : DbContext
+    public abstract class BaseRepository<T, TContext> : IBaseRepository<T> where T : class, IEntity where TContext : DbContext
     {
 
         protected readonly TContext _context;
 
-        public BaseRepositoryImpl(TContext context)
+        public BaseRepository(TContext context)
         {
             _context = context;
         }
 
-        public async Task<T> Add(T entity)
+        public virtual async Task<T> Add(T entity)
         {
             _context.Set<T>().Add(entity);
             await _context.SaveChangesAsync();

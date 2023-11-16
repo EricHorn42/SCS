@@ -12,7 +12,7 @@ using StockControlSystem.Infrastructure;
 namespace StockControlSystem.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20231110000603_FirstMigration")]
+    [Migration("20231115234553_FirstMigration")]
     partial class FirstMigration
     {
         /// <inheritdoc />
@@ -123,8 +123,7 @@ namespace StockControlSystem.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("Price")
-                        .HasPrecision(2)
-                        .HasColumnType("decimal(10,2)");
+                        .HasColumnType("decimal(8,2)");
 
                     b.Property<int?>("SupplierId")
                         .HasColumnType("int");
