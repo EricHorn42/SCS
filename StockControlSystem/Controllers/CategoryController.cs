@@ -6,10 +6,8 @@ namespace StockControlSystem.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CategoryController : BaseController<Category, CategoryRepositoryImpl>
+    public class CategoryController : ControllerBase
     {
-        public CategoryController(CategoryRepositoryImpl repository) : base(repository)
-        {
-        }
+
     }
 }

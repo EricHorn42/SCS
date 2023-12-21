@@ -8,14 +8,9 @@ namespace StockControlSystem.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ItemController : BaseController<Item, ItemRepositoryImpl>
+    public class ItemController : ControllerBase
     {
         
-        public ItemController(ItemRepositoryImpl itemRepository): base(itemRepository)
-        {
-
-        }
-       
 
     }
 }

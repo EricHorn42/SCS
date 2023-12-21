@@ -1,11 +1,10 @@
 ﻿using StockControlSystem.Models;
+using StockControlSystem.Repositories;
 
 namespace StockControlSystem.Infrastructure.Contexto.Repositories.Impl
 {
-    public class SupplierRepositoryImpl : BaseRepository<Supplier, Context>
+    public class SupplierRepositoryImpl : ISupplierRepository
     {
-        public SupplierRepositoryImpl(Context context) : base(context)
-        {
-        }
+       
     }
 }

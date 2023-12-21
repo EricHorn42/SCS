@@ -6,10 +6,8 @@ namespace StockControlSystem.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class AddressController : BaseController<Address, AddressRepositoryImpl>
+    public class AddressController : ControllerBase
     {
-        public AddressController(AddressRepositoryImpl repository) : base(repository)
-        {
-        }
+
     }
 }

@@ -1,63 +1,21 @@
-﻿using System.Collections;
+﻿using StockControlSystem.Models;
+using StockControlSystem.Repositories;
+using StockControlSystem.Services.Interfaces;
 
-namespace Stock_control_system.Services
+namespace StockControlSystem.Services
 {
-    public class ItemService : IBaseService
+    public class ItemService : IItemService
     {
-        ServiceDescriptor IList<ServiceDescriptor>.this[int index] { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        private readonly IItemRepository _itemRepository;
 
-        int ICollection<ServiceDescriptor>.Count => throw new NotImplementedException();
-
-        bool ICollection<ServiceDescriptor>.IsReadOnly => throw new NotImplementedException();
-
-        void ICollection<ServiceDescriptor>.Add(ServiceDescriptor item)
+        public ItemService(IItemRepository itemRepository)
         {
-            throw new NotImplementedException();
+            _itemRepository = itemRepository;
         }
 
-        void ICollection<ServiceDescriptor>.Clear()
+        public void Add(Item item)
         {
-            throw new NotImplementedException();
-        }
-
-        bool ICollection<ServiceDescriptor>.Contains(ServiceDescriptor item)
-        {
-            throw new NotImplementedException();
-        }
-
-        void ICollection<ServiceDescriptor>.CopyTo(ServiceDescriptor[] array, int arrayIndex)
-        {
-            throw new NotImplementedException();
-        }
-
-        IEnumerator<ServiceDescriptor> IEnumerable<ServiceDescriptor>.GetEnumerator()
-        {
-            throw new NotImplementedException();
-        }
-
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            throw new NotImplementedException();
-        }
-
-        int IList<ServiceDescriptor>.IndexOf(ServiceDescriptor item)
-        {
-            throw new NotImplementedException();
-        }
-
-        void IList<ServiceDescriptor>.Insert(int index, ServiceDescriptor item)
-        {
-            throw new NotImplementedException();
-        }
-
-        bool ICollection<ServiceDescriptor>.Remove(ServiceDescriptor item)
-        {
-            throw new NotImplementedException();
-        }
-
-        void IList<ServiceDescriptor>.RemoveAt(int index)
-        {
-            throw new NotImplementedException();
+            _itemRepository.Add(item);
         }
     }
 }

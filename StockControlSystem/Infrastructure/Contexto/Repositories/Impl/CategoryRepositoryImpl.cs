@@ -1,11 +1,11 @@
 ﻿using StockControlSystem.Models;
+using StockControlSystem.Repositories;
 
 namespace StockControlSystem.Infrastructure.Contexto.Repositories.Impl
 {
-    public class CategoryRepositoryImpl : BaseRepository<Category, Context>
+    public class CategoryRepositoryImpl :ICategoryRepository
     {
-        public CategoryRepositoryImpl(Context context) : base(context)
-        {
-        }
+       
+        
     }
 }

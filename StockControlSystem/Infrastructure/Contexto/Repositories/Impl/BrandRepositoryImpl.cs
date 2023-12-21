@@ -1,12 +1,11 @@
 ﻿using StockControlSystem.DTOs;
 using StockControlSystem.Models;
+using StockControlSystem.Repositories;
 
 namespace StockControlSystem.Infrastructure.Contexto.Repositories.Impl
 {
-    public class BrandRepositoryImpl : BaseRepository<Brand, Context>
+    public class BrandRepositoryImpl : IBrandRepository
     {
-        public BrandRepositoryImpl(Context context) : base(context)
-        {
-        }
+    
     }
 }

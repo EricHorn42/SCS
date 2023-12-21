@@ -7,10 +7,8 @@ namespace StockControlSystem.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class BrandController : BaseController<Brand, BrandRepositoryImpl>
+    public class BrandController : ControllerBase
     {
-        public BrandController(BrandRepositoryImpl repository) : base(repository)
-        {
-        }
+
     }
 }
