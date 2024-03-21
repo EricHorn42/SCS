@@ -56,6 +56,10 @@ Se a issue estiver relacionada a outras issues existentes, faça referência a e
 ### Definição de Critérios de Aceitação
 Para issues de implementação de funcionalidades, defina critérios de aceitação claros que descrevam o que deve ser alcançado para considerar a issue concluída.
 
+### Exemplo
+
+Utilize esta [issue](https://github.com/EricHorn42/SCS/issues/1) como exemplo.
+
 </br>
 
 ## 💬 Padrão de Commit
@@ -103,7 +107,7 @@ feat(api)!: send an email to the customer when a product is shipped
 
 </br>
 
-## Versionamento
+## 🔢 Versionamento
 
 O Stock Control System adere ao Versionamento Semântico 2.0.0 para gerenciar as versões do software de forma consistente e previsível. O Versionamento Semântico é um conjunto de regras e convenções para atribuir números de versão a releases de software com base nas mudanças semânticas introduzidas.
 
