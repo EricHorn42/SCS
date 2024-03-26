@@ -18,7 +18,6 @@ namespace StockControlSystem.Models
         [JsonIgnore]
         [ForeignKey("SupplierId")]
         public virtual Supplier? Supplier { get; set; }
-        public int? SupplierId { get; set; }
         [JsonIgnore]
         [ForeignKey("BrandId")]
         public virtual Brand? Brand { get; set; }

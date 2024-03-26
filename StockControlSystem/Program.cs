@@ -19,7 +19,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddControllers();
 
 builder.Services.AddDbContext<Context>(options =>
-        options.UseSqlServer(builder.Configuration.GetConnectionString("MyConnection")));
+        options.UseSqlServer(builder.Configuration.GetConnectionString("AZURE_SQL_CONNECTIONSTRING")));
 
 builder.Services.AddScoped<ISupplierRepository, SupplierRepositoryImpl>();
 builder.Services.AddScoped<IAddressRepository, AddressRepositoryImpl>();

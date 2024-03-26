@@ -12,8 +12,8 @@ using StockControlSystem.Infrastructure;
 namespace StockControlSystem.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20231115234553_FirstMigration")]
-    partial class FirstMigration
+    [Migration("20240326002643_Initial")]
+    partial class Initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -56,7 +56,7 @@ namespace StockControlSystem.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("SupplierID")
+                    b.Property<int?>("SupplierId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");

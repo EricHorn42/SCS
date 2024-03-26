@@ -6,7 +6,7 @@ namespace StockControlSystem.Services.Interfaces
 {
     public interface IItemService
     {
-        void Add(Item item)
+        void Add(Item item);
 
     }
 }
