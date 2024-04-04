@@ -19,5 +19,15 @@ namespace StockControlSystem.Services
             _brandRepository.Add(brand);
             return brand;
         }
+
+        public IQueryable<Brand> GetAll()
+        {
+            return _brandRepository.GetAll();
+        }
+
+        public Brand GetById(int id)
+        {
+            return _brandRepository.FindById(id);
+        }
     }
 }

@@ -9,6 +9,6 @@ namespace StockControlSystem.Repositories
         void Update(Brand brand);
         void Delete(int id);
         IQueryable<Brand> GetAll();
-        Brand? FindById(int id);
+        Brand FindById(int id);
     }
 }

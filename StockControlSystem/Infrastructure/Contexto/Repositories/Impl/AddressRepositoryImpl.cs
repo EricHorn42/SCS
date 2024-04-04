@@ -42,6 +42,7 @@ namespace StockControlSystem.Infrastructure.Contexto.Repositories.Impl
         public void Update(Address address)
         {
             _context.Update(address);
+            _context.SaveChanges();
         }
     }
 }
