@@ -1,0 +1,35 @@
+@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div style="font-size:20px">
+    <span class="label label-success">@Model.Result</span>
+</div>
+
+
+<div>
+
+
+    <ul>
+        <li>
+            <a asp-area="" asp-page="/Adresses/Index">Adresses</a>
+        </li>
+        <li>
+            <a asp-area="" asp-page="/Brands/Index">Brands</a>
+        </li>
+        <li>
+            <a asp-area="" asp-page="/Categories/Index">Categories</a>
+        </li>
+        <li>
+            <a asp-area="" asp-page="/Itens/Index">Itens</a>
+        </li>
+        <li>
+            <a asp-area="" asp-page="/Suppliers/Index">Suppliers</a>
+        </li>
+
+    </ul>
+</div>

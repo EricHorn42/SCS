@@ -2,7 +2,6 @@
 using StockControlSystem.DTOs;
 using StockControlSystem.Infrastructure.Contexto.Repositories.Impl;
 using StockControlSystem.Models;
-using StockControlSystem.Services;
 using StockControlSystem.Services.Interfaces;
 
 namespace StockControlSystem.Controllers
@@ -23,20 +22,20 @@ namespace StockControlSystem.Controllers
         {
             try
             {
-            _brandService.Add(brand);
-            return Ok(brand);
+                _brandService.Add(brand);
+                return Ok(brand);
             }
             catch (Exception ex)
             {
                 return BadRequest(ex);
             }
-            
+
         }
 
         [HttpGet]
         public ActionResult ListAll()
         {
-            return Ok("Funcionando");
+            return Ok(_brandService.GetAll());
         }
     }
 }
