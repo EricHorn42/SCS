@@ -5,7 +5,7 @@ namespace StockControlSystem.Repositories
 {
     public interface IBrandRepository
     {
-        Brand Add(Brand brand);
+        void Add(Brand brand);
         void Update(Brand brand);
         void Delete(int id);
         IQueryable<Brand> GetAll();

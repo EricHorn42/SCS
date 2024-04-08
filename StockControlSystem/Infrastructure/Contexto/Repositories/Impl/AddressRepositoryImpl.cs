@@ -14,8 +14,16 @@ namespace StockControlSystem.Infrastructure.Contexto.Repositories.Impl
 
         public void Add(Address address)
         {
-            _context.Add(address);
-            _context.SaveChanges();
+
+            try
+            {
+                _context.Add(address);
+                _context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+
+            }
         }
 
         public void Delete(int id)

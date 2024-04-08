@@ -13,9 +13,29 @@ namespace StockControlSystem.Services
             _itemRepository = itemRepository;
         }
 
-        public void Add(Item item)
+        public bool Delete(Item item)
         {
-            _itemRepository.Add(item);
+            throw new NotImplementedException();
+        }
+
+        public IQueryable<Item> GetAll()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Item GetById(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Item Update(Item item)
+        {
+            throw new NotImplementedException();
+        }
+
+        Item IItemService.Add(Item item)
+        {
+            throw new NotImplementedException();
         }
     }
 }

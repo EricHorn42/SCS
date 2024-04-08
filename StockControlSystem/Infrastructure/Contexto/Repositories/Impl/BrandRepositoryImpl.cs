@@ -27,7 +27,7 @@ namespace StockControlSystem.Infrastructure.Contexto.Repositories.Impl
                 Id = id
             };
             _context.Attach(brand);
-            _context.Brands.Remove(brand);
+             _context.Brands.Remove(brand);
             _context.SaveChanges();
         }
 
@@ -41,9 +41,9 @@ namespace StockControlSystem.Infrastructure.Contexto.Repositories.Impl
             return _context.Brands;
         }
 
-        public void Update(Brand brand)
+        public Brand Update(Brand brand)
         {
-            _context.Update(brand);
+            return _context.Update(brand).Entity;
         }
     }
 }

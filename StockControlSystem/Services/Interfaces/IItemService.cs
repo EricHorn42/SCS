@@ -6,7 +6,11 @@ namespace StockControlSystem.Services.Interfaces
 {
     public interface IItemService
     {
-        void Add(Item item);
+        Item Add(Item item);
+        Item Update(Item item);
+        bool Delete(Item item);
+        Item GetById(int id);
+        IQueryable<Item> GetAll();
 
     }
 }

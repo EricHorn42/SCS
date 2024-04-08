@@ -23,20 +23,46 @@ namespace StockControlSystem.Controllers
         {
             try
             {
-            _brandService.Add(brand);
-            return Ok(brand);
+                _brandService.Add(brand);
+                return Ok(brand);
             }
             catch (Exception ex)
             {
                 return BadRequest(ex);
             }
-            
+
         }
 
         [HttpGet]
-        public ActionResult ListAll()
+        public ActionResult GetAll()
         {
-            return Ok("Funcionando");
+            try
+            {
+                return Ok(_brandService.GetAll());
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex);
+            }
+        }
+
+        [HttpGet("{id}")]
+        public ActionResult Get(int id)
+        {
+            try
+            {
+                Brand brand = _brandService.GetById(id);
+
+                if (brand == null)
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    return Ok(brand);
+                }
+            }
+            catch (Exception ex) { return BadRequest(ex); }
         }
     }
 }
